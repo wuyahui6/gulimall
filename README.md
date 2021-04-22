@@ -30,7 +30,7 @@ vagrant up启动虚拟机环境。
     DNS2=8.8.8.8
     ```
   * service network restart
-# 默认只允许ssh登录方式，为了后来操作方便，文件上传等，我们可以配置允许账号密码登录
+* 默认只允许ssh登录方式，为了后来操作方便，文件上传等，我们可以配置允许账号密码登录
 ```java
 vim /etc/ssh/sshd_config
 修改
@@ -40,4 +40,4 @@ service sshd restart
 账号root
 密码vagrant
 ```
-# 配置源 
+* 配置源 
