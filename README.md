@@ -20,5 +20,4 @@ vagrant up启动虚拟机环境。
 
 前面的页面中有ssh账号信息。vagrant ssh 就会连上虚拟机。可以使用exit退出
 > 下次使用也可以直接vagrant up直接启动，但要确保当前目录在C:/用户/ 文件夹下，他下面有一个Vagrantfile，不过我们也可以配置环境变量。
-
 > 启动后再次vagrant ssh连上即可`
