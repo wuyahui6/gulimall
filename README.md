@@ -31,13 +31,22 @@ vagrant up启动虚拟机环境。
     ```
   * service network restart
 * 默认只允许ssh登录方式，为了后来操作方便，文件上传等，我们可以配置允许账号密码登录
-```java
-vim /etc/ssh/sshd_config
-修改
-PasswordAuthentication yes
-重启
-service sshd restart
-账号root
-密码vagrant
-```
+  ```java
+  vim /etc/ssh/sshd_config
+  修改
+  PasswordAuthentication yes
+  重启
+  service sshd restart
+  账号root
+  密码vagrant
+  ```
 * 配置源 
+ ```java
+  # 备份原yum源
+  mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+  # 使用新yum源
+  curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
+  # 生成缓存
+  yum makecache
+
+ ```
