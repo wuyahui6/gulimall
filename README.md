@@ -24,8 +24,8 @@ vagrant up启动虚拟机环境。
   * ls 一般有ifcfg-eth0 1
   * ip addr 看哪个网格是192.168.56网段，然后vim他
   * vim ifcfg-eth1 加入
-   ```java
-   GATEWAY=192.168.56.1
-   DNS1=114.114.114.114
-   DNS2=8.8.8.8
-   ```
+    ```java
+    GATEWAY=192.168.56.1
+    DNS1=114.114.114.114
+    DNS2=8.8.8.8
+    ```
