@@ -20,4 +20,7 @@ vagrant up启动虚拟机环境。
 * 也可以更改Vagrantfile更改虚拟机ip，修改其中的config.vm.network "private_network",ip:"192.168.56.10"，这个ip需要在windows的ipconfig中查到vitualbox的虚拟网卡ip，然后更改下最后一个数字就行（不能是1，1是我们的主机）。配置完后vagrant reload重启虚拟机。在虚拟机中ip addr就可以查看到地址了。互相ping也能ping通。
 * 关掉防火墙，VirualBox中第一个网卡设置NAT，第二个网卡设置仅主机
 * 如果ping不了baidu<br>
-  ```cd /etc/sysconfig/network-scripts```
+  * cd /etc/sysconfig/network-scripts
+  * ls 一般有ifcfg-eth0 1
+  * ip addr 看哪个网格是192.168.56网段，然后vim他
+  * vim ifcfg-eth1 加入
