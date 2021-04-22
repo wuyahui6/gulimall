@@ -15,3 +15,9 @@ vagrant up启动虚拟机环境。
 前面的页面中有ssh账号信息。vagrant ssh 就会连上虚拟机。可以使用exit退出
 > 下次使用也可以直接vagrant up直接启动，但要确保当前目录在C:/用户/ 文件夹下，他下面有一个Vagrantfile，不过我们也可以配置环境变量。
 > 启动后再次vagrant ssh连上即可
+* 不过他使用的网络方式是网络地址转换NAT（端口转发），如果其他主机要访问虚拟机，必须由windows端口如3333断发给虚拟机端口如3306。这样每在linux里安一个软件都要进行端口映射，不方便，（也可以在virualBox里挨个设置）。我们想要给虚拟机一个固定的ip地址，windows和虚拟机可以互相ping通。
+* 方式1是在虚拟机中配置静态ip。
+* 也可以更改Vagrantfile更改虚拟机ip，修改其中的config.vm.network "private_network",ip:"192.168.56.10"，这个ip需要在windows的ipconfig中查到vitualbox的虚拟网卡ip，然后更改下最后一个数字就行（不能是1，1是我们的主机）。配置完后vagrant reload重启虚拟机。在虚拟机中ip addr就可以查看到地址了。互相ping也能ping通。
+* 关掉防火墙，VirualBox中第一个网卡设置NAT，第二个网卡设置仅主机
+* 如果ping不了baidu<br>
+  ```cd /etc/sysconfig/network-scripts```
