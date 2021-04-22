@@ -41,12 +41,65 @@ vagrant up启动虚拟机环境。
   密码vagrant
   ```
 * 配置源 
- ```java
-  # 备份原yum源
-  mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-  # 使用新yum源
-  curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
-  # 生成缓存
-  yum makecache
+  ```java
+   # 备份原yum源
+   mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+   # 使用新yum源
+   curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
+   # 生成缓存
+   yum makecache
 
- ```
+  ```
+* 虚拟机安装docker
+ https://docs.docker.com/engine/install/centos/
+   ```java
+   #卸载系统之前的docker 
+   sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+                  
+                  
+   sudo yum install -y yum-utils
+
+   # 配置镜像
+   sudo yum-config-manager \
+       --add-repo \
+       https://download.docker.com/linux/centos/docker-ce.repo
+
+   sudo yum install docker-ce docker-ce-cli containerd.io
+
+   sudo systemctl start docker
+   # 设置开机自启动
+   sudo systemctl enable docker
+
+   docker -v
+   sudo docker images
+
+   # 配置镜像加速
+
+  ```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
